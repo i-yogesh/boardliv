@@ -17,12 +17,10 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "https://www.collaborateboard.site",
-      "https://collaborateboard.site",
       "http://localhost:5173",
       "https://magenta-chaja-09f595.netlify.app",
-      "https://boardliv.netlify.app/",
       "https://creative-centaur-8dd775.netlify.app",
+      "https://boardliv.netlify.app"
     ],
     methods: ["GET", "POST"],
     credentials: true, // Important for cookies
@@ -33,12 +31,10 @@ const io = new Server(server, {
 app.use(
   cors({
     origin: [
-      "https://www.collaborateboard.site",
-      "https://collaborateboard.site",
       "http://localhost:5173",
       "https://magenta-chaja-09f595.netlify.app",
-      "https://boardliv.netlify.app/",
       "https://creative-centaur-8dd775.netlify.app",
+      "https://boardliv.netlify.app",
     ],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
