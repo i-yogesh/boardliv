@@ -1,0 +1,32 @@
+.navbar {
+  background-color: rgb(226, 234, 246);
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-link {
+  margin-right: 10px;
+}
+
+.nav-link.btn {
+  background-color: #6c63ff;
+}
+
+.nav-link.btn:hover {
+  background-color: #5a54d1;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
