@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
       try {
         // Attempt to refresh the access token
-        const tokenResponse = await api.post("/users/token");
+        const tokenResponse = await api.post("/users/token",{},{ withCredentials : true });
         const { accessToken } = tokenResponse.data;
 
         // Set the default authorization header for future requests

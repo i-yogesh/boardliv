@@ -22,9 +22,12 @@ const io = new Server(server, {
       "http://localhost:5173",
       "https://magenta-chaja-09f595.netlify.app",
       "https://boardliv.netlify.app/",
-      "https://creative-centaur-8dd775.netlify.app/"
+      "https://creative-centaur-8dd775.netlify.app/",
+      "*"
     ],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   },
 });
 
@@ -37,9 +40,12 @@ app.use(
       "http://localhost:5173",
       "https://magenta-chaja-09f595.netlify.app",
       "https://boardliv.netlify.app/",
-      "https://creative-centaur-8dd775.netlify.app/"
+      "https://creative-centaur-8dd775.netlify.app/",
+      "*"
     ],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   })
 );
 
