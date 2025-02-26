@@ -61,8 +61,10 @@ router.post("/login", async (req, res) => {
     res.status(200).cookie("refreshToken", refreshToken, {
       maxAge: 1 * 24 * 60 * 60 * 1000,
       httpOnly: true,
-      secure: true,
-      sameSite: "strict",
+      // secure: true,
+      secure: process.env.NODE_ENV === "production",
+      // sameSite: "strict",
+      sameSite: "None"
     });
     res.json({ accessToken, message: `Welcome back ${user.username}` });
   } catch (error) {
@@ -83,6 +85,7 @@ router.post("/token", (req, res) => {
   // Verify authorization token validity
   try {
     const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+    console.log("Reached here")
     const tokenData = { user: { username: decoded.user.username } };
 
     // Sign new access token
